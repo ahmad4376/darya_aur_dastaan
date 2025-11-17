@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Darya aur Dastaan Color Scheme - Earthy & Deep */
+  --background: #FDFCFA; /* Warm off-white */
+  --foreground: #1A1A1A; /* Deep black */
+
+  /* Primary - Deep Teal/Slate */
+  --primary: #33484a;
+  --primary-foreground: #FDFCFA;
+
+  /* Secondary - Warm Gold/Olive */
+  --secondary: #987655;
+  --secondary-foreground: #FDFCFA;
+
+  /* Accent - Lighter Gold */
+  --accent: #B89968;
+  --accent-foreground: #1A1A1A;
+
+  /* Card colors */
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+
+  /* Popover */
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+
+  /* Muted */
+  --muted: #F5F3EF;
+  --muted-foreground: #666666;
+
+  /* Destructive */
+  --destructive: #C85A54;
+
+  /* Border and input */
+  --border: #E8E5E0;
+  --input: #E8E5E0;
+  --ring: #33484a;
+
+  /* Charts */
+  --chart-1: #33484a;
+  --chart-2: #987655;
+  --chart-3: #B89968;
+  --chart-4: #4A5F61;
+  --chart-5: #C9A876;
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #33484a;
+  --sidebar-primary-foreground: #FDFCFA;
+  --sidebar-accent: #F5F3EF;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E8E5E0;
+  --sidebar-ring: #33484a;
+}
+
+.dark {
+  /* Darya aur Dastaan Dark Mode - Earthy & Deep */
+  --background: #1A1A1A; /* Deep black */
+  --foreground: #FDFCFA; /* Warm off-white */
+
+  /* Primary - Lighter Teal/Slate for dark mode */
+  --primary: #5A7F82;
+  --primary-foreground: #FDFCFA;
+
+  /* Secondary - Muted Gold/Olive */
+  --secondary: #A08060;
+  --secondary-foreground: #FDFCFA;
+
+  /* Accent - Lighter Gold */
+  --accent: #C9A876;
+  --accent-foreground: #1A1A1A;
+
+  /* Card colors */
+  --card: #242424;
+  --card-foreground: #FDFCFA;
+
+  /* Popover */
+  --popover: #242424;
+  --popover-foreground: #FDFCFA;
+
+  /* Muted */
+  --muted: #2A2A2A;
+  --muted-foreground: #A8A8A8;
+
+  /* Destructive */
+  --destructive: #D87A74;
+
+  /* Border and input */
+  --border: #3A3A3A;
+  --input: #3A3A3A;
+  --ring: #5A7F82;
+
+  /* Charts */
+  --chart-1: #5A7F82;
+  --chart-2: #A08060;
+  --chart-3: #C9A876;
+  --chart-4: #6A8F92;
+  --chart-5: #D9B896;
+
+  /* Sidebar */
+  --sidebar: #242424;
+  --sidebar-foreground: #FDFCFA;
+  --sidebar-primary: #5A7F82;
+  --sidebar-primary-foreground: #FDFCFA;
+  --sidebar-accent: #2A2A2A;
+  --sidebar-accent-foreground: #FDFCFA;
+  --sidebar-border: #3A3A3A;
+  --sidebar-ring: #5A7F82;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  html {
+    @apply overflow-x-hidden;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, #2B7A9B 0%, #4A9B8E 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #C07F5E 0%, #E07A5F 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
